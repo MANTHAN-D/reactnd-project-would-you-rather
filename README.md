@@ -1,100 +1,61 @@
 # Would You Rather Project
 
-This is the starter code for the final assessment project for Udacity's React & Redux course.
+## Description
 
-The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
+This is React.js based web application that allows you to access collection of _would you rather_ questions as well as create their own. It allows users to track their score as compared to other registered users.
 
-Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
+## Development
 
-## Data
+**You’ll need to have Node > 6 on your local development machine**. You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
 
-There are two types of objects stored in our database:
+To deploy this project to your local machine - Clone this repo to your dev box
 
-* Users
-* Questions
+```sh
+cd path-to-project
+```
 
-### Users
+Perform npm install or yarn install
 
-Users include:
+```sh
+npm install
+```
 
-| Attribute    | Type             | Description           |
-|-----------------|------------------|-------------------         |
-| id                 | String           | The user’s unique identifier |
-| name          | String           | The user’s first name  and last name     |
-| avatarURL  | String           | The path to the image file |
-| questions | Array | A list of ids of the polling questions this user created|
-| answers      | Object         |  The object's keys are the ids of each question this user answered. The value of each key is the answer the user selected. It can be either `'optionOne'` or `'optionTwo'` since each question has two options.
+OR
 
-### Questions
+```sh
+yarn install
+```
 
-Questions include:
+To quickly start the server, run command:
 
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| id                  | String | The question’s unique identifier |
-| author        | String | The author’s unique identifier |
-| timestamp | String | The time when the question was created|
-| optionOne | Object | The first voting option|
-| optionTwo | Object | The second voting option|
+```sh
+npm start
+```
 
-### Voting Options
+OR
 
-Voting options are attached to questions. They include:
+```sh
+yarn run start
+```
 
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| votes             | Array | A list that contains the id of each user who voted for that option|
-| text                | String | The text of the option |
+Then open the app at [http://localhost:3000/](http://localhost:3000/)
 
-Your code will talk to the database via 4 methods:
+## Wireframes
 
-* `_getUsers()`
-* `_getQuestions()`
-* `_saveQuestion(question)`
-* `_saveQuestionAnswer(object)`
+Project development began with quick wireframes capturing the required functionalities and screens. Two screen were designed:
 
-1) `_getUsers()` Method
+- [Signin Page](https://ninjamock.com/s/F1MCTSx)
+- [Home Page](https://ninjamock.com/s/F1MCTSx)
+- [New Question Page](https://ninjamock.com/s/F1MCTSx)
+- [View Un-answered Page](https://ninjamock.com/s/F1MCTSx)
+- [View Answered Page](https://ninjamock.com/s/F1MCTSx)
+- [Leaderboard Page](https://ninjamock.com/s/F1MCTSx)
+- [404 Page](https://ninjamock.com/s/F1MCTSx)
 
-*Description*: Get all of the existing users from the database.  
-*Return Value*: Object where the key is the user’s id and the value is the user object.
+## References
 
-2) `_getQuestions()` Method
+This project was bootstraped from [Would You Rather Starter](https://github.com/udacity/reactnd-project-would-you-rather-starter).
 
-*Description*: Get all of the existing questions from the database.  
-*Return Value*: Object where the key is the question’s id and the value is the question object.
+## Support and/or Issues, Concerns, Questions
 
-3) `_saveQuestion(question)` Method
-
-*Description*: Save the polling question in the database.  
-*Parameters*:  Object that includes the following properties: `author`, `optionOneText`, and `optionTwoText`. More details about these properties:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| author | String | The id of the user who posted the question|
-| optionOneText| String | The text of the first option |
-| optionTwoText | String | The text of the second option |
-
-*Return Value*:  An object that has the following properties: `id`, `author`, `optionOne`, `optionTwo`, `timestamp`. More details about these properties:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| id | String | The id of the question that was posted|
-| author | String | The id of the user who posted the question|
-| optionOne | Object | The object has a text property and a votes property, which stores an array of the ids of the users who voted for that option|
-| optionTwo | Object | The object has a text property and a votes property, which stores an array of the ids of the users who voted for that option|
-|timestamp|String | The time when the question was created|
-
-4) `_saveQuestionAnswer(object)` Method
-
-*Description*: Save the answer to a particular polling question in the database.
-*Parameters*: Object that contains the following properties: `authedUser`, `qid`, and `answer`. More details about these properties:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| authedUser | String | The id of the user who answered the question|
-| qid | String | The id of the question that was answered|
-| answer | String | The option the user selected. The value should be either `"optionOne"` or `"optionTwo"`|
-
-## Contributing
-
-This repository is the starter code for *all* Udacity students. Therefore, we most likely will not accept pull requests. For details, check out [CONTRIBUTING.md](https://github.com/udacity/reactnd-project-would-you-rather-starter/blob/master/CONTRIBUTING.md).
+If you have any issues and/or concerns with the above project feel free to comment on Github.
