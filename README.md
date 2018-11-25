@@ -42,7 +42,7 @@ Then open the app at [http://localhost:3000/](http://localhost:3000/)
 
 ## Wireframes
 
-Project development began with quick wireframes capturing the required functionalities and screens. Two screen were designed:
+Project development began with quick wireframes capturing the required functionalities and pages. Seven pages were designed:
 
 - [Signin Page](https://ninjamock.com/s/F1MCTSx)
 - [Home Page](https://ninjamock.com/s/F1MCTSx)
