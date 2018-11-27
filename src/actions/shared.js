@@ -1,4 +1,4 @@
-import { _getQuestions, _getUsers } from '../../_DATA'
+import { _getQuestions, _getUsers } from '../utils/_DATA'
 import { receiveQuestions } from './questions'
 import { receiveUsers } from './users'
 
