@@ -1,13 +1,12 @@
-import { _getQuestions, _getUsers } from '../utils/_DATA'
+import { getInitialData } from '../utils/api'
 import { receiveQuestions } from './questions'
 import { receiveUsers } from './users'
 
 export const handleInitialData = () => {
-  _getQuestions().then(({ questions }) => {
-    dispatch(receiveQuestions(questions))
-  })
-
-  _getUsers().then(({ users }) => {
-    dispatch(receiveUsers(users))
-  })
+  return dispatch => {
+    return getInitialData().then(({ users, questions }) => {
+      dispatch(receiveUsers(users))
+      dispatch(receiveQuestions(questions))
+    })
+  }
 }
