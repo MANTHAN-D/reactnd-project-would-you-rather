@@ -1,0 +1,19 @@
+html,
+body,
+div[id='root'],
+.signin-container {
+  height: 100%;
+}
+
+.signin-container {
+  max-width: 300px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.signin-container-row {
+  border: 1px solid black;
+  text-align: center;
+  padding: 20px 20px;
+}
