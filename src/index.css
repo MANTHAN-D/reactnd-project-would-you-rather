@@ -17,3 +17,8 @@ div[id='root'],
   text-align: center;
   padding: 20px 20px;
 }
+
+.header-avatar {
+  width: 35px;
+  height: 35px;
+}
