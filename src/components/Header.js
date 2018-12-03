@@ -2,22 +2,28 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Navbar, Nav, NavItem, Image } from 'react-bootstrap'
 
+import './header.css'
+
 class Header extends Component {
   render() {
     return (
       <Navbar>
         <Navbar.Header>
-          <Navbar.Brand>Would You Rather?</Navbar.Brand>
+          <Navbar.Brand className="header-brand">
+            Would You Rather?
+          </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem>New Question</NavItem>
-            <NavItem>Leaders' Board </NavItem>
+            <NavItem className="header-item-text">New Question</NavItem>
+            <NavItem className="header-item-text">Leaders' Board </NavItem>
           </Nav>
           <Nav pullRight>
             <NavItem>
-              <Navbar.Text>Welcome, {this.props.userName}</Navbar.Text>
+              <Navbar.Text className="header-item-text">
+                Welcome, {this.props.userName}
+              </Navbar.Text>
               <Image
                 src={this.props.avatarURL}
                 responsive
@@ -27,7 +33,7 @@ class Header extends Component {
               />
             </NavItem>
             <NavItem>
-              <Navbar.Text>Logout</Navbar.Text>
+              <Navbar.Text className="header-item-text">Logout</Navbar.Text>
             </NavItem>
           </Nav>
         </Navbar.Collapse>

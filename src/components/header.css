@@ -1,0 +1,13 @@
+.header-brand {
+  font-family: fantasy;
+  font-size: 30px;
+  padding: 25px 15px;
+}
+
+.header-item-text {
+  font-size: 15px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 20px;
+}

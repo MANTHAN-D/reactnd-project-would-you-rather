@@ -1,0 +1,17 @@
+.home-page-tabbed-container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.home-page-tabbed-container > ul > li {
+  width: 50%;
+}
+
+.home-page-tabbed-container > div[class='tab-content'] {
+  padding-top: 10px;
+}
+
+.home-page-tabbed-container > ul > li > a {
+  font-family: fantasy;
+  font-size: 15px;
+}
