@@ -1,0 +1,49 @@
+.result-page-container {
+  padding: 20px 20px;
+  margin: 50px 50px;
+}
+
+.result-page-header {
+  font-family: fantasy;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.option-container {
+  font-family: fantasy;
+  font-size: 20px;
+  padding: 10px 10px;
+}
+
+.option-container > div {
+  padding: 10px 10px;
+}
+
+.option-container > div:nth-child(2) > span {
+  margin: 10px 10px;
+}
+
+.answer-badge {
+  margin-left: 10px;
+  background-color: #5656d2;
+}
+
+.votes-label {
+  background-color: #e62888;
+}
+
+.count-label {
+  background-color: #99b35ca3;
+  font-size: 20px;
+  color: #732c2c;
+}
+
+.panel-heading {
+  margin-bottom: 20px;
+  font-family: fantasy;
+}
+
+.panel-title {
+  font-size: 20px;
+}

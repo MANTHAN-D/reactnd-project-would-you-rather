@@ -5,6 +5,7 @@ import { handleInitialData } from '../actions/shared'
 import SignIn from './SignIn'
 import Header from './Header'
 import HomePage from './HomePage'
+import QuestionPage from './QuestionPage'
 class App extends Component {
   componentDidMount = () => {
     this.props.dispatch(handleInitialData())
@@ -17,7 +18,8 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
-        <HomePage />
+        {/* <HomePage /> */}
+        <QuestionPage id={'xj352vofupe1dqz9emx13r'} />
       </Fragment>
     )
   }
