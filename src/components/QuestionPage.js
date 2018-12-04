@@ -1,23 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
 import ResultPage from './ResultPage'
 import AnswerQuestion from './AnswerQuestion'
 import NotFound from './Error'
 
-class QuestionPage extends Component {
-  render() {
-    const { question, isAnswered, id } = this.props
-    return question !== undefined ? (
-      isAnswered === true ? (
-        <ResultPage id={id} />
-      ) : (
-        <AnswerQuestion id={id} />
-      )
+const QuestionPage = props => {
+  const { question, isAnswered, id } = props
+  return question !== undefined ? (
+    isAnswered === true ? (
+      <ResultPage id={id} />
     ) : (
-      <NotFound />
+      <AnswerQuestion id={id} />
     )
-  }
+  ) : (
+    <NotFound />
+  )
 }
 
 const mapStateToProps = ({ questions, authedUser }, { id }) => {
