@@ -9,6 +9,7 @@ import Header from './Header'
 import HomePage from './HomePage'
 import QuestionPage from './QuestionPage'
 import NewQuestion from './NewQuestion'
+import LeaderBoard from './LeaderBoard'
 class App extends Component {
   componentDidMount = () => {
     this.props.dispatch(handleInitialData())
@@ -28,8 +29,9 @@ class App extends Component {
         <LoadingBar />
         <Header />
         {/* <HomePage /> */}
-        <QuestionPage id={'xj352vofupe1dqz9emx13r'} />
+        {/* <QuestionPage id={'xj352vofupe1dqz9emx13r'} /> */}
         {/* <NewQuestion /> */}
+        <LeaderBoard />
       </Fragment>
     )
   }

@@ -1,0 +1,48 @@
+.leader-board-container {
+  padding: 20px 20px;
+  margin: 50px 50px;
+}
+
+.leader-info {
+  border-bottom: 1px solid gray;
+  margin-top: 10px;
+}
+
+.panel-heading {
+  margin-bottom: 20px;
+  font-family: fantasy;
+}
+
+.panel-title {
+  font-size: 20px;
+}
+
+.leader-glimpse-avatar {
+  width: 45px;
+  height: 45px;
+  display: inline-flex;
+  margin: 15px 15px;
+}
+
+.username {
+  font-family: fantasy;
+  font-size: 25px;
+  padding: 10px 10px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin: 15px 15px;
+}
+
+.asked-label,
+.answered-label {
+  background-color: #e62888;
+  margin: 15px 15px;
+}
+
+.count-label {
+  background-color: #99b35ca3;
+  font-size: 20px;
+  color: #732c2c;
+  margin: 15px 15px;
+}
