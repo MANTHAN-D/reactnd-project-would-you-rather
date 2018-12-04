@@ -14,6 +14,8 @@ import {
   Badge
 } from 'react-bootstrap'
 
+import { handleSaveQuestionAnswer } from '../actions/questions'
+
 import './answerquestion.css'
 
 class AnswerQuestion extends Component {
@@ -22,8 +24,17 @@ class AnswerQuestion extends Component {
   }
 
   handleSubmit = e => {
+    const { saveQuestionAnswer, authedUser, id } = this.props
+    const { answer } = this.state
     e.preventDefault()
-    // TODO: Call action creator to set state
+    const info = {
+      authedUser,
+      qid: id,
+      answer
+    }
+
+    saveQuestionAnswer(info)
+
     //TODO: Redirect to corresponding answer page
   }
 
@@ -86,12 +97,12 @@ class AnswerQuestion extends Component {
                   <Col>
                     <FormGroup onChange={this.handleSelect}>
                       <div>
-                        <Radio name="optionsGroup" value={optionOneText}>
+                        <Radio name="optionsGroup" value={'optionOne'}>
                           {optionOneText}
                         </Radio>
                       </div>
                       <div>
-                        <Radio name="optionsGroup" value={optionTwoText}>
+                        <Radio name="optionsGroup" value={'optionTwo'}>
                           {optionTwoText}
                         </Radio>
                       </div>
@@ -127,4 +138,13 @@ const mapStateToProps = ({ authedUser, users, questions }, { id }) => {
       id !== null ? users[questions[id].author].answers.length : null
   }
 }
-export default connect(mapStateToProps)(AnswerQuestion)
+
+const mapDispatchToProps = dispatch => {
+  return {
+    saveQuestionAnswer: info => dispatch(handleSaveQuestionAnswer(info))
+  }
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AnswerQuestion)

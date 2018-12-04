@@ -88,8 +88,10 @@ const mapStateToProps = ({ authedUser, questions }, { id }) => {
   const votesOptionOne = questions[id].optionOne.votes.length
   const votesOptionTwo = questions[id].optionTwo.votes.length
   const percentageOptionOne = Number.parseFloat(
-    (votesOptionOne * 100) / (votesOptionOne + votesOptionTwo)
-  ).toPrecision(2)
+    Number.parseFloat(
+      (votesOptionOne * 100) / (votesOptionOne + votesOptionTwo)
+    ).toPrecision(2)
+  )
 
   const percentageOptionTwo = 100 - percentageOptionOne
 
