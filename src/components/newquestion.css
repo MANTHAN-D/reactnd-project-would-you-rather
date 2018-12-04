@@ -1,0 +1,36 @@
+.panel-heading {
+  margin-bottom: 20px;
+  font-family: fantasy;
+}
+
+.panel-title {
+  font-size: 20px;
+}
+
+.new-question-page-container {
+  padding: 20px 20px;
+  margin: 50px 50px;
+}
+
+.new-question-header {
+  font-family: fantasy;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.option-container {
+  font-family: fantasy;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+}
+
+.submit-container {
+  float: right;
+}
+
+.submit-container > div > button {
+  margin-right: 20px;
+}
