@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { Panel, Image, Button, Grid, Row, Col } from 'react-bootstrap'
 
 import './questionglimpse.css'
 
 class QuestionGlimpse extends Component {
+  handleViewPoll = e => {
+    this.props.history.push('/questions/' + this.props.id)
+  }
+
   render() {
     const { question, avatarURL, optionGlimpseText } = this.props
     return (
@@ -28,7 +33,7 @@ class QuestionGlimpse extends Component {
             </Col>
             <Col md={2}>
               <span className="view-poll-button">
-                <Button>View Poll</Button>
+                <Button onClick={this.handleViewPoll}>View Poll</Button>
               </span>
             </Col>
           </Row>
@@ -54,4 +59,4 @@ const mapStateToProps = ({ questions, users }, { id }) => {
   }
 }
 
-export default connect(mapStateToProps)(QuestionGlimpse)
+export default withRouter(connect(mapStateToProps)(QuestionGlimpse))

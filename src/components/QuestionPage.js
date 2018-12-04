@@ -18,7 +18,8 @@ const QuestionPage = props => {
   )
 }
 
-const mapStateToProps = ({ questions, authedUser }, { id }) => {
+const mapStateToProps = ({ questions, authedUser }, props) => {
+  const { id } = props.match.params
   const isAnswered =
     id !== null &&
     questions[id] !== undefined &&
@@ -26,7 +27,8 @@ const mapStateToProps = ({ questions, authedUser }, { id }) => {
       questions[id].optionTwo.votes.includes(authedUser))
   return {
     question: id !== null ? questions[id] : undefined,
-    isAnswered
+    isAnswered,
+    id
   }
 }
 

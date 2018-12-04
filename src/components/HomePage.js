@@ -33,7 +33,9 @@ const mapStateToProps = ({ authedUser, users, questions }) => {
   const answeredQuestionIds =
     authedUser !== null ? Object.keys(users[authedUser].answers) : null
 
-  const questionIds = Object.keys(questions)
+  const questionIds = Object.keys(questions).sort(
+    (a, b) => questions[b].timestamp - questions[a].timestamp
+  )
 
   return {
     unansweredQuestionIds:

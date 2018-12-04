@@ -45,6 +45,12 @@ class NewQuestion extends Component {
     }
 
     handleAddQuestion(question)
+
+    this.setState({
+      optionOne: '',
+      optionTwo: ''
+    })
+    this.props.history.push(`/`)
   }
 
   render() {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 import {
   Panel,
@@ -20,7 +21,8 @@ import './answerquestion.css'
 
 class AnswerQuestion extends Component {
   state = {
-    answer: null
+    answer: null,
+    toHome: false
   }
 
   handleSubmit = e => {
@@ -35,7 +37,10 @@ class AnswerQuestion extends Component {
 
     saveQuestionAnswer(info)
 
-    //TODO: Redirect to corresponding answer page
+    this.setState(() => ({
+      answer: '',
+      toHome: true
+    }))
   }
 
   handleSelect = e => {
@@ -53,6 +58,13 @@ class AnswerQuestion extends Component {
       questionsAsked,
       questionsAnswered
     } = this.props
+
+    const { toHome } = this.state
+
+    if (toHome === true) {
+      return <Redirect to="/" />
+    }
+
     return (
       <Panel className="answer-page-container">
         <Panel.Heading>
@@ -135,7 +147,9 @@ const mapStateToProps = ({ authedUser, users, questions }, { id }) => {
     questionsAsked:
       id !== null ? users[questions[id].author].questions.length : null,
     questionsAnswered:
-      id !== null ? users[questions[id].author].answers.length : null
+      id !== null
+        ? Object.keys(users[questions[id].author].answers).length
+        : null
   }
 }
 

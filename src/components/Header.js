@@ -1,23 +1,37 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Navbar, Nav, NavItem, Image } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+
+import { setAuthedUser } from '../actions/authedUser'
 
 import './header.css'
 
 class Header extends Component {
+  handleLogout = e => {
+    e.preventDefault()
+    this.props.setAuthedUser(null)
+  }
+
   render() {
     return (
       <Navbar>
         <Navbar.Header>
-          <Navbar.Brand className="header-brand">
-            Would You Rather?
-          </Navbar.Brand>
+          <LinkContainer to="/" exact>
+            <Navbar.Brand className="header-brand">
+              Would You Rather?
+            </Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem className="header-item-text">New Question</NavItem>
-            <NavItem className="header-item-text">Leaders' Board </NavItem>
+            <LinkContainer to="/add">
+              <NavItem className="header-item-text">New Question</NavItem>
+            </LinkContainer>
+            <LinkContainer to="/leaderboard">
+              <NavItem className="header-item-text">Leaders' Board</NavItem>
+            </LinkContainer>
           </Nav>
           <Nav pullRight>
             <NavItem>
@@ -32,7 +46,7 @@ class Header extends Component {
                 className="header-avatar"
               />
             </NavItem>
-            <NavItem>
+            <NavItem onClick={this.handleLogout}>
               <Navbar.Text className="header-item-text">Logout</Navbar.Text>
             </NavItem>
           </Nav>
@@ -52,4 +66,13 @@ const mapStateToProps = ({ authedUser, users }) => {
   }
 }
 
-export default connect(mapStateToProps)(Header)
+const mapDispatchToProps = dispatch => {
+  return {
+    setAuthedUser: id => dispatch(setAuthedUser(id))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header)

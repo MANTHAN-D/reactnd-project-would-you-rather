@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import { BrowserRouter, Route } from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
 
 import { LoadingBar } from 'react-redux-loading'
@@ -15,31 +16,43 @@ class App extends Component {
     this.props.dispatch(handleInitialData())
   }
 
+  componentDidUpdate = prevProps => {
+    if (
+      prevProps &&
+      prevProps.authedUser === null &&
+      this.props.authedUser !== null
+    ) {
+      this.props.dispatch(handleInitialData())
+    }
+  }
+
   render() {
-    if (this.props.signinRequired) {
-      return (
+    const { signinRequired } = this.props
+    return (
+      <BrowserRouter>
         <Fragment>
           <LoadingBar />
-          <SignIn />
+          {signinRequired === true ? (
+            <SignIn />
+          ) : (
+            <Fragment>
+              <Header />
+              <Route path="/" exact component={HomePage} />
+              <Route path="/questions/:id" exact component={QuestionPage} />
+              <Route path="/add" exact component={NewQuestion} />
+              <Route path="/leaderboard" exact component={LeaderBoard} />
+            </Fragment>
+          )}
         </Fragment>
-      )
-    }
-    return (
-      <Fragment>
-        <LoadingBar />
-        <Header />
-        {/* <HomePage /> */}
-        {/* <QuestionPage id={'xj352vofupe1dqz9emx13r'} /> */}
-        {/* <NewQuestion /> */}
-        <LeaderBoard />
-      </Fragment>
+      </BrowserRouter>
     )
   }
 }
 
 const mapStateToProps = ({ authedUser }) => {
   return {
-    signinRequired: authedUser === null
+    signinRequired: authedUser === null,
+    authedUser
   }
 }
 
