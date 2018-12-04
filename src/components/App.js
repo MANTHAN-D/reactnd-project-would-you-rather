@@ -28,7 +28,7 @@ class App extends Component {
         <LoadingBar />
         <Header />
         {/* <HomePage /> */}
-        <QuestionPage id={'xj352vofupe1dqz9emx13r'} />
+        <QuestionPage id={'xj352vofupe1dqz9emx13r123'} />
         {/* <NewQuestion /> */}
       </Fragment>
     )
