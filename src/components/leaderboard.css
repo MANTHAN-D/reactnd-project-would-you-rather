@@ -46,3 +46,10 @@
   color: #732c2c;
   margin: 15px 15px;
 }
+
+.rank-label {
+  background-color: #f1ea1cd1;
+  font-size: 20px;
+  color: #61a524;
+  margin: 15px 15px;
+}

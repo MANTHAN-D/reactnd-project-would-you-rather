@@ -12,9 +12,10 @@ const LeaderBoard = props => {
         <Panel.Title componentClass="h3">Leaders' Board</Panel.Title>
       </Panel.Heading>
       <Grid>
-        {leaders.map(user => (
+        {leaders.map((user, index) => (
           <Row className="leader-info" key={user.id}>
-            <Col md={1}>
+            <Col md={2}>
+              <Badge className="rank-label">{index + 1}</Badge>
               <Image
                 className="leader-glimpse-avatar"
                 src={user.avatarURL}
@@ -23,7 +24,7 @@ const LeaderBoard = props => {
                 circle={true}
               />
             </Col>
-            <Col md={5}>
+            <Col md={4}>
               <span className="username">{user.name}</span>
             </Col>
             <Col md={3}>
