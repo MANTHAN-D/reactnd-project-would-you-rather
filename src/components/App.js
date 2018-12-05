@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { Route, withRouter } from 'react-router-dom'
+import { Route, withRouter, Switch } from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
 
 import LoadingBar from 'react-redux-loading'
@@ -12,6 +12,7 @@ import QuestionPage from './QuestionPage'
 import NewQuestion from './NewQuestion'
 import LeaderBoard from './LeaderBoard'
 import SignUp from './SignUp'
+import NotFound from './Error'
 class App extends Component {
   componentDidMount = () => {
     this.props.dispatch(handleInitialData())
@@ -31,7 +32,7 @@ class App extends Component {
     const { signinRequired, toSignUp } = this.props
     return (
       <Fragment>
-        <LoadingBar className="loading-bar-css"/>
+        <LoadingBar className="loading-bar-css" />
 
         {signinRequired === true ? (
           <SignIn />
@@ -40,10 +41,13 @@ class App extends Component {
         ) : (
           <Fragment>
             <Header />
-            <Route path="/" exact component={HomePage} />
-            <Route path="/questions/:id" exact component={QuestionPage} />
-            <Route path="/add" exact component={NewQuestion} />
-            <Route path="/leaderboard" exact component={LeaderBoard} />
+            <Switch>
+              <Route path="/" exact component={HomePage} />
+              <Route path="/questions/:id" exact component={QuestionPage} />
+              <Route path="/add" exact component={NewQuestion} />
+              <Route path="/leaderboard" exact component={LeaderBoard} />
+              <Route component={NotFound} />
+            </Switch>
           </Fragment>
         )}
       </Fragment>

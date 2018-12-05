@@ -19,7 +19,7 @@ const NotFound = props => {
           <Row className="error-body-message">
             <Col>
               <div>
-                Oops! Sorry. The question you are looking for cannot be found!
+                Oops! Sorry. The resource you are looking for cannot be found!
               </div>
             </Col>
           </Row>
