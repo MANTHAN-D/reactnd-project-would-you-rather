@@ -40,6 +40,12 @@ yarn run start
 
 Then open the app at [http://localhost:3000/](http://localhost:3000/)
 
+## Interaction
+
+Once deployed, [http://localhost:3000/](http://localhost:3000/) would prompt you with a page to either **sign-in or sign-up.**
+
+For default users as defined in [_DATA.js](src/utils/_DATA.js), password phrase is **password**.
+
 ## Wireframes
 
 Project development began with quick wireframes capturing the required functionalities and pages. Seven pages were designed:
