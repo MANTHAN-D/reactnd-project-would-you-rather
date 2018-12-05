@@ -9,6 +9,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",

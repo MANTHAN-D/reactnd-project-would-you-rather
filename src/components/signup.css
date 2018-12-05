@@ -1,0 +1,19 @@
+.user-input {
+  margin-bottom: 10px;
+}
+
+.error-message-container {
+  margin-top: 10px;
+  font-family: fantasy;
+  font-size: 15px;
+}
+
+.signup-message-container {
+  margin-top: 10px;
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+.error-message-container {
+  color: red;
+}

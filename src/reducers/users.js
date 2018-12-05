@@ -1,4 +1,4 @@
-import { RECEIVE_USERS, UPDATE_USERS_ON_ANSWER } from '../actions/users'
+import { RECEIVE_USERS, UPDATE_USERS_ON_ANSWER, ADD_USER } from '../actions/users'
 
 const users = (state = {}, action) => {
   switch (action.type) {
@@ -17,6 +17,19 @@ const users = (state = {}, action) => {
             ...state[authedUser].answers,
             [qid]: answer
           }
+        }
+      }
+      case ADD_USER:
+      const { id, name, password, avatarURL } = action.info
+      return {
+        ...state,
+        [id] : {
+          id,
+          name,
+          password,
+          avatarURL,
+          answers: {},
+          questions: []
         }
       }
     default:
