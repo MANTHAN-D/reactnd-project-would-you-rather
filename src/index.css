@@ -22,3 +22,7 @@ div[id='root'],
   width: 35px;
   height: 35px;
 }
+
+.loading-bar-css {
+  border: 3px solid red;
+}

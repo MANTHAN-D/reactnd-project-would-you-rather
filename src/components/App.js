@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Route, withRouter } from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
 
-import { LoadingBar } from 'react-redux-loading'
+import LoadingBar from 'react-redux-loading'
 
 import SignIn from './SignIn'
 import Header from './Header'
@@ -31,7 +31,8 @@ class App extends Component {
     const { signinRequired, toSignUp } = this.props
     return (
       <Fragment>
-        <LoadingBar />
+        <LoadingBar className="loading-bar-css"/>
+
         {signinRequired === true ? (
           <SignIn />
         ) : toSignUp === true ? (
